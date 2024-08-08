@@ -1,6 +1,12 @@
 # Scoreboard
 <h2>Description</h2>
 <h4>Scoreboard is a Library for logging owned games and wishlisting unowned games</h4>
+<h2>Technologies Used</h2>
+<ul>
+<li>Backend: Django, Python, and PostgreSQL
+<li>Frontend: HTML, CSS, JavaScript
+</ul>
+<h4></h4>
 <h2>ERD</h2>
 <img src="./public/images/Screenshot 2024-08-08 182420.png" alt="ERD" srcset="">
 <h2>Wireframe</h2>
