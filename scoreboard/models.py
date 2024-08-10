@@ -22,3 +22,6 @@ class Wishlist(models.Model):
 class Library(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, related_name='library', default=1)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='library', default=1)
+
+class Catalogue(models.Model):
+    game = models.ForeignKey(Game, on_delete=models.CASCADE, related_name='Catalogue', default=1)

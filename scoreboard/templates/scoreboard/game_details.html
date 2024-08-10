@@ -1,18 +1,4 @@
 {% extends 'scoreboard/homepage.html' %} {% block content %}
+<h4>{{game.title}}</h4>
 
-<h4>{{ game.title }}</h4>
-
-<img src="{{ game.photo_url }}" alt="" class="game-photo" />
-
-
-
-<ul>
-  {% for game in games %}
-  <li>
-    <a href="{% url 'game_detail' pk=game.pk %}"
-      >{{ game.title }}-{{ game.description }}</a
-    >
-  </li>
-  {% endfor %}
-</ul>
 {% endblock %}

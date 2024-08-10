@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from .forms import LibraryForm, WishlistForm
-from .models import Game, User, Wishlist, Library
+from .models import Game, User, Wishlist, Library, Catalogue
 import json
 
 # with open('./video-game.json') as json_file:
@@ -18,7 +18,7 @@ def game_list(request):
 
 def game_detail(request, pk):
     game = Game.objects.get(id=pk)
-    return render(request, 'scoreboard/game_details.html', {'games': game})
+    return render(request, 'scoreboard/game_details.html', {'game': game})
 
 def library(request):
     catalog = Library.objects.all()
