@@ -39,3 +39,6 @@ def library_add(request):
     else:
         form = LibraryForm()
     return render(request, 'scoreboard/library_form.html', {'form': form})
+
+def error404(request):
+    return render(request, 'scoreboard/404.html')
