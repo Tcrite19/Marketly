@@ -17,11 +17,11 @@ class User(models.Model):
 
 class Wishlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='wishlist', default=1)
-    
+    game = models.ForeignKey(Game, on_delete=models.CASCADE, related_name='wishlist', default=1)
 
 class Library(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='library', default=1)
-    
+    game = models.ForeignKey(Game, on_delete=models.CASCADE, related_name='library', default=1)
 
 class Catalogue(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, related_name='Catalogue', default=1)

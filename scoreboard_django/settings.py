@@ -19,6 +19,8 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
@@ -34,6 +36,7 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 
 
 ALLOWED_HOSTS = [
+    # "localhost",
     "scoreboard-91fx.onrender.com", 
     "https://scoreboard-91fx.onrender.com",
 ]

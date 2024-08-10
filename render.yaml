@@ -1,15 +1,15 @@
 databases:
   - name: scoreboard
     plan: free
-    # databaseName: scoreboard3
+    databaseName: scoreboard3
     database:user: scoreboard_2vf9_user
     user: scoreboard_2vf9_user
-    # user: scoreboard_user
+    
 
 services:
   - type: web
     plan: free
-    name: scoreboard3
+    name: scoreboard
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn scoreboard.asgi:application -k uvicorn.workers.UvicornWorker"
