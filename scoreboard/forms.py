@@ -1,14 +1,8 @@
 from django import forms
-from .models import Game, User, Wishlist, Library
+from .models import Game, User, Wishlist, Library, Catalogue
 
 class LibraryForm(forms.ModelForm):
 
     class Meta:
-        model = Library
-        fields =('game', 'user')
-
-class WishlistForm(forms.ModelForm):
-
-    class Meta:
-        model = Wishlist
-        fields =('game', 'user')
+        model = Catalogue
+        fields =('game', 'library', 'wishlist')

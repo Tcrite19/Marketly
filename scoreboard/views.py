@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
-from .forms import LibraryForm, WishlistForm
+from .forms import LibraryForm
 from .models import Game, User, Wishlist, Library, Catalogue
 import json
 
@@ -34,8 +34,8 @@ def library_add(request):
     if request.method == 'POST':
         form = LibraryForm(request.POST)
         if form.is_valid():
-            library = form.save()
-            return redirect('library')
+            artist = form.save()
+            return redirect('game_details', pk=artist.pk)
     else:
         form = LibraryForm()
-    return render(request, "scoreboard/library.html")
+    return render(request, 'scoreboard/library_form.html', {'form': form})
