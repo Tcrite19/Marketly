@@ -42,6 +42,10 @@ def library_add(request):
         form = LibraryForm()
     return render(request, 'scoreboard/library_form.html', {'form': form})
 
+def library_delete(request, pk):
+    Library.objects.get(id=pk).delete()
+    return redirect('game_details')
+
 def game_add(request):
     if request.method == 'POST':
         form = GameForm(request.POST)
