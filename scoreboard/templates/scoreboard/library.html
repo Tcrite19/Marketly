@@ -1,6 +1,12 @@
-{% extends 'scoreboard/homepage.html' %} {% block content %}
+{% extends 'tunr/base.html' %} {% block content %}
 
 <ul>
-    
+  {% for game in archive %}
+  <li>
+    <a href="{% url 'game_details' pk=games.pk %}">
+      {{ game.title }}
+    </a>
+  </li>
+  {% endfor %}
 </ul>
 {% endblock %}

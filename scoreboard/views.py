@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
-from .forms import LibraryForm
-from .models import Game, User, Wishlist, Library, Catalogue
+from .forms import LibraryForm, GameForm
+from .models import Game, User, Wishlist, Library, Catalogue, LibraryCatalogue, WishlistCatalogue
 import json
 
 # with open('./video-game.json') as json_file:
@@ -20,9 +20,7 @@ def game_detail(request, pk):
     game = Game.objects.get(id=pk)
     return render(request, 'scoreboard/game_details.html', {'game': game})
 
-def library(request):
-    catalog = Library.objects.all()
-    return render(request, 'scoreboard/library.html', {'catalog': catalog})
+
 
 def wishlist(request):
     catalog = Wishlist.objects.all()
@@ -30,15 +28,29 @@ def wishlist(request):
 
 # print(Library.game)
 
+def library(request):
+    archive = Library.objects.all
+    return render(request, 'scoreboard/library.html', {'archive': archive})
+
 def library_add(request):
     if request.method == 'POST':
         form = LibraryForm(request.POST)
         if form.is_valid():
-            artist = form.save()
-            return redirect('game_details', pk=artist.pk)
+            game = form.save()
+            return redirect('game_details', pk=game.pk)
     else:
         form = LibraryForm()
     return render(request, 'scoreboard/library_form.html', {'form': form})
+
+def game_add(request):
+    if request.method == 'POST':
+        form = GameForm(request.POST)
+        if form.is_valid():
+            game = form.save()
+            return redirect('game_details', pk=game.pk)
+    else:
+        form = LibraryForm()
+    return render(request, 'scoreboard/game_form.html', {'form': form})
 
 def error404(request):
     return render(request, 'scoreboard/404.html')
