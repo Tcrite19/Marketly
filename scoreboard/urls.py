@@ -9,5 +9,5 @@ urlpatterns = [
     path('library/', views.library, name='library'),
     path('library/add', views.library_add, name='library_add'),
     path('wishlist/', views.wishlist, name='wishlist'),
-
+    path('*', views.error404, name='error404')
 ]

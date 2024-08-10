@@ -1,8 +1,10 @@
 databases:
   - name: scoreboard
     plan: free
-    databaseName: scoreboard3
-    user: scoreboard_user
+    # databaseName: scoreboard3
+    database:user: scoreboard_2vf9_user
+    user: scoreboard_2vf9_user
+    # user: scoreboard_user
 
 services:
   - type: web
