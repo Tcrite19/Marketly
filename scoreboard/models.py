@@ -3,9 +3,9 @@ from django.db import models
 
 
 class Game(models.Model):
-    title = models.CharField(max_length=100)
-    description = models.CharField(max_length=10000)
-    
+    title = models.CharField(max_length=10485)
+    description = models.CharField(max_length=10485)
+    photo_url = models.CharField(max_length=10485, null=True)
 
     def __str__(self):
         return self.title

@@ -11,6 +11,8 @@ ipython = "*"
 djangorestframework = "*"
 requests = "*"
 httpx = "*"
+config = "*"
+load-config = "*"
 
 [dev-packages]
 

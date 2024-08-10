@@ -1,8 +1,14 @@
-<h2>Games <a href="">(+)</a></h2>
+{% extends 'scoreboard/homepage.html' %} {% block content %}
+
 <ul>
   {% for game in games %}
   <li>
-    <a href="">{{ game.title }}</a>
+    
+    <a href="{% url 'game_details' pk=game.pk %}">
+      <img src="{{ game.photo_url }}" alt="" srcset="" style="height: 20%;">
+      {{ game.title }}
+    </a>
   </li>
   {% endfor %}
 </ul>
+{% endblock %}
