@@ -6,6 +6,11 @@ name = "pypi"
 [packages]
 django = "*"
 psycopg2-binary = "*"
+django-extensions = "*"
+ipython = "*"
+djangorestframework = "*"
+requests = "*"
+httpx = "*"
 
 [dev-packages]
 
